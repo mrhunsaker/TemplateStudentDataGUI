@@ -35,9 +35,10 @@ students = [
         'HarrietSmith',
         'RobertMartin',
         'AugustaHawkins',
-        'JohnKnightley','
+        'JohnKnightley',
         'IsabellaKnightley'
         ]
+        
 donaldchamberlainiep = """Student  	    XX  min / month
     • Goal 1
         ◦ Goal Objective 1
@@ -103,7 +104,7 @@ johnknightleyiep = """Student  	    XX  min / month
         ◦ Goal Objective 1
         ◦ Goal Objective 2    
         """
-isabellannightleyiep = """Student  	    XX  min / month
+isabellaknightleyiep = """Student  	    XX  min / month
     • Goal 1
         ◦ Goal Objective 1
         ◦ Goal Objective 2    
