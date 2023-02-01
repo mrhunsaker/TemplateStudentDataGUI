@@ -38,7 +38,7 @@ students = [
         'JohnKnightley',
         'IsabellaKnightley'
         ]
-        
+
 donaldchamberlainiep = """Student  	    XX  min / month
     • Goal 1
         ◦ Goal Objective 1
@@ -419,6 +419,94 @@ cviDomains = [
         'visualNovelty',
         'visuallyGuidedReach'
         ]
+
+colorpreference = ("""
+COLOR PREFERENCE
+0.........Range 1-2:  Objects viewed are generally single color
+1.........Range 3-4:  Has “favorite” color
+2.........Range 5-6:  Objects may have 2- 3 colors
+3.........Range 7-8:  More colors, familiar patterns regarded
+4.........Range 9-10: No color or pattern preference
+""")
+needformovement = ("""
+NEED FOR MOVEMENT
+0.........Range 1-2:  Objects viewed generally have movement/reflective properties
+1.........Range 3-4:  More consistent localization, brief fixations on movement & reflective materials
+2.........Range 5-6:  Movement continues to be an important factor to initiate visual attention
+3.........Range 7-8:  Movement not required for attention at near
+4.........Range 9-10: Typical responses to moving targets
+""")
+visuallatency = ("""
+VISUAL LATENCY
+0.........Range 1-2:  Prolonged periods of visual latency
+1.........Range 3-4:  Latency slightly decreases after periods of consistent viewing
+2.........Range 5-6:  Latency present only when student is tired, stressed, or over stimulated
+3.........Range 7-8:  Latency rarely present
+4.........Range 9-10: Latency resolved
+""")
+visualfieldpreference = ("""
+VISUAL FIELD LATENCY
+0.........Range 1-2:  Distinct field dependency
+1.........Range 3-4:  Shows visual field preferences
+2.........Range 5-6:  Field preferences decreasing with familiar inputs
+3.........Range 7-8:  May alternate use of right and left fields
+4.........Range 9-10: Visual fields unrestricted
+""")
+visualcomplexity = ("""
+DIFFICULTY WITH VISUAL COMPLEXITY
+0.........Range 1-2:  Responds only in strictly controlled environments
+1.........Range 3-4:  Visually fixates when environment is controlled
+2.........Range 5-6:  Student tolerates low levels of familiar background noise
+                         Regards familiar faces when voice does not compete
+3.........Range 7-8:  Competing auditory stimuli tolerated during periods of viewing
+                         Views simple books/ symbols & Smiles at/regards familiar and new faces
+4.........Range 9-10: Only the most complex visual environments affect visual response
+                         Views books or other 2-dimensional materials & Typical visual- social responses
+""")
+nonpurposefulgaze = ("""
+LIGHT GAZING AND NONPURPOSEFUL GAZE
+0.........Range 1-2:  May localize briefly but no prolonged fixations on objects or faces
+                         Overly attentive to lights or perhaps ceiling fans
+1.........Range 3-4:  Less attracted to lights - can be redirected to other targets
+2.........Range 5-6:  Light is no longer a distractor
+3.........Range 7-8:  Light is no longer a distractor
+4.........Range 9-10: Light is no longer a distractor
+""")
+distanceviewing = ("""
+DIFFICULTY WITH DISTANCE VIEWING
+0.........Range 1-2:  Visually attends in near space only
+1.........Range 3-4:  Occasional visual attention on familiar, moving or large targets at 2-3 feet
+2.........Range 5-6:  Visual attention extends beyond near space, up to 4-6 feet
+3.........Range 7-8:  Visual attention extends to 10 feet with targets that produce movement
+4.........Range 9-10: Visual attention extends beyond 20 feet & Demonstrates memory of visual events
+""")
+visualreflexes = ("""
+ATYPICAL VISUAL REFLEXES
+0......... Range 1-2:  No blink in response to touch and/or visual threat
+1.........Range 3-4:  Blinks in response to touch but response may be latent
+2.........Range 5-6:  Blink response to touch consistently present
+                         Visual threat response intermittently present
+3.........Range 7-8:  Visual threat response consistently present (both near 90% resolved)
+4.........Range 9-10: Visual reflexes always present, resolved
+""")
+visualnovelty = ("""
+DIFFICULTY WITH VISUAL NOVELTY
+0.........Range 1-2:  Only favorite or known objects solicit visual attention
+1.........Range 3-4:  May tolerate novel objects if the novel objects share characteristics of familiar objects
+2.........Range 5-6:  Use of “known” objects to initiate looking sequence
+3.........Range 7-8:  Selection of objects less restricted, requires 1-2 sessions of “warm up” time
+4.........Range 9-10: Selection of objects not restricted
+""")
+visuallyguidedreach = ("""
+ABSENCE OF VISUALLY GUIDED REACH
+0.........Range 1-2:  Look & touch occur as separate functions
+                     Large &/or moving targets
+1.........Range 3-4:  Look & touch on smaller objects that are familiar, lighted, or reflective
+                     Look and touch are still separate
+2.........Range 5-6:  Visually guided reach with familiar objects or “favorite” color
+3.........Range 7-8:  Look and touch occur in rapid sequence but not always together
+4.........Range 9-10: Look and touch consistently
+""")
 
 ##############################################################################
 # End Variables

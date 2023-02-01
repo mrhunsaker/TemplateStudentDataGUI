@@ -25,7 +25,6 @@ import traceback
 from csv import writer
 from pathlib import Path
 from sqlite3 import Error
-import datetime
 import numpy as np
 import pandas as pd
 import plotly.graph_objects as go
@@ -35,6 +34,7 @@ import wx.lib.scrolledpanel as scrolled
 from plotly.subplots import make_subplots
 
 from helpers import *
+
 
 date = datetime.datetime.now().strftime("%Y_%m_%d-%H%M%S_%p")
 
@@ -1080,7 +1080,7 @@ class dataPanel(wx.Panel):
         wx.StaticText(
                 self,
                 -1,
-                "Trial 1" + '.' * (20 - len("Trial 1")),
+                "Trial 1" + '.' * (50 - len("Trial 1")),
                 pos = (500,
                        80)
                 )
@@ -1096,7 +1096,7 @@ class dataPanel(wx.Panel):
         wx.StaticText(
                 self,
                 -1,
-                "Trial 2" + '.' * (20 - len("Trial 2")),
+                "Trial 2" + '.' * (50 - len("Trial 2")),
                 pos = (500,
                        110)
                 )
@@ -1112,7 +1112,7 @@ class dataPanel(wx.Panel):
         wx.StaticText(
                 self,
                 -1,
-                "Trial 3" + '.' * (20 - len("Trial 3")),
+                "Trial 3" + '.' * (50 - len("Trial 3")),
                 pos = (500,
                        140)
                 )
@@ -1128,7 +1128,7 @@ class dataPanel(wx.Panel):
         wx.StaticText(
                 self,
                 -1,
-                "Trial 4" + '.' * (20 - len("Trial 4")),
+                "Trial 4" + '.' * (50 - len("Trial 4")),
                 pos = (500,
                        170)
                 )
@@ -1144,7 +1144,7 @@ class dataPanel(wx.Panel):
         wx.StaticText(
                 self,
                 -1,
-                "Trial 5" + '.' * (20 - len("Trial 5")),
+                "Trial 5" + '.' * (50 - len("Trial 5")),
                 pos = (500,
                        200)
                 )
@@ -1160,7 +1160,7 @@ class dataPanel(wx.Panel):
         wx.StaticText(
                 self,
                 -1,
-                "Trial 6" + '.' * (20 - len("Trial 6")),
+                "Trial 6" + '.' * (50 - len("Trial 6")),
                 pos = (500,
                        230)
                 )
@@ -1176,7 +1176,7 @@ class dataPanel(wx.Panel):
         wx.StaticText(
                 self,
                 -1,
-                "Trial 7" + '.' * (20 - len("Trial 7")),
+                "Trial 7" + '.' * (50 - len("Trial 7")),
                 pos = (500,
                        260)
                 )
@@ -1192,7 +1192,7 @@ class dataPanel(wx.Panel):
         wx.StaticText(
                 self,
                 -1,
-                "Trial 8" + '.' * (20 - len("Trial 8")),
+                "Trial 8" + '.' * (50 - len("Trial 8")),
                 pos = (500,
                        290)
                 )
@@ -1208,7 +1208,7 @@ class dataPanel(wx.Panel):
         wx.StaticText(
                 self,
                 -1,
-                "Trial 9" + '.' * (20 - len("Trial 9")),
+                "Trial 9" + '.' * (50 - len("Trial 9")),
                 pos = (500,
                        320)
                 )
@@ -1224,7 +1224,7 @@ class dataPanel(wx.Panel):
         wx.StaticText(
                 self,
                 -1,
-                "Trial 10" + '.' * (20 - len("Trial 10")),
+                "Trial 10" + '.' * (50 - len("Trial 10")),
                 pos = (500,
                        350)
                 )
@@ -1240,7 +1240,7 @@ class dataPanel(wx.Panel):
         wx.StaticText(
                 self,
                 -1,
-                "Trial 11" + '.' * (20 - len("Trial 11")),
+                "Trial 11" + '.' * (50 - len("Trial 11")),
                 pos = (500,
                        380)
                 )
@@ -1329,7 +1329,7 @@ class dataPanel(wx.Panel):
         studentname = self.studentname1.GetString(self.studentname1.GetSelection())
         studentname = studentname.lower()
         lookupid = f"{studentname}iep"
-        iepdata = locals()[lookupid]
+        iepdata = globals()[lookupid]
         wx.MessageBox(
                 iepdata,
                 caption = f"IEP Summary for {studentname}"
@@ -8852,96 +8852,9 @@ class cviPanel(scrolled.ScrolledPanel):
         :param event:
         :type event:
         """
-        colorpreference = ("""
-        COLOR PREFERENCE
-        0.........Range 1-2:  Objects viewed are generally single color
-        1.........Range 3-4:  Has “favorite” color
-        2.........Range 5-6:  Objects may have 2- 3 colors
-        3.........Range 7-8:  More colors, familiar patterns regarded
-        4.........Range 9-10: No color or pattern preference
-        """)
-        needformovement = ("""
-        NEED FOR MOVEMENT
-        0.........Range 1-2:  Objects viewed generally have movement/reflective properties
-        1.........Range 3-4:  More consistent localization, brief fixations on movement & reflective materials
-        2.........Range 5-6:  Movement continues to be an important factor to initiate visual attention
-        3.........Range 7-8:  Movement not required for attention at near
-        4.........Range 9-10: Typical responses to moving targets
-        """)
-        visuallatency = ("""
-        VISUAL LATENCY
-        0.........Range 1-2:  Prolonged periods of visual latency
-        1.........Range 3-4:  Latency slightly decreases after periods of consistent viewing
-        2.........Range 5-6:  Latency present only when student is tired, stressed, or over stimulated
-        3.........Range 7-8:  Latency rarely present
-        4.........Range 9-10: Latency resolved
-        """)
-        visualfieldpreference = ("""
-        VISUAL FIELD LATENCY
-        0.........Range 1-2:  Distinct field dependency
-        1.........Range 3-4:  Shows visual field preferences
-        2.........Range 5-6:  Field preferences decreasing with familiar inputs
-        3.........Range 7-8:  May alternate use of right and left fields
-        4.........Range 9-10: Visual fields unrestricted
-        """)
-        visualcomplexity = ("""
-        DIFFICULTY WITH VISUAL COMPLEXITY
-        0.........Range 1-2:  Responds only in strictly controlled environments
-        1.........Range 3-4:  Visually fixates when environment is controlled
-        2.........Range 5-6:  Student tolerates low levels of familiar background noise
-                                 Regards familiar faces when voice does not compete
-        3.........Range 7-8:  Competing auditory stimuli tolerated during periods of viewing
-                                 Views simple books/ symbols & Smiles at/regards familiar and new faces
-        4.........Range 9-10: Only the most complex visual environments affect visual response
-                                 Views books or other 2-dimensional materials & Typical visual- social responses
-        """)
-        nonpurposefulgaze = ("""
-        LIGHT GAZING AND NONPURPOSEFUL GAZE
-        0.........Range 1-2:  May localize briefly but no prolonged fixations on objects or faces
-                                 Overly attentive to lights or perhaps ceiling fans
-        1.........Range 3-4:  Less attracted to lights - can be redirected to other targets
-        2.........Range 5-6:  Light is no longer a distractor
-        3.........Range 7-8:  Light is no longer a distractor
-        4.........Range 9-10: Light is no longer a distractor
-        """)
-        distanceviewing = ("""
-        DIFFICULTY WITH DISTANCE VIEWING
-        0.........Range 1-2:  Visually attends in near space only
-        1.........Range 3-4:  Occasional visual attention on familiar, moving or large targets at 2-3 feet
-        2.........Range 5-6:  Visual attention extends beyond near space, up to 4-6 feet
-        3.........Range 7-8:  Visual attention extends to 10 feet with targets that produce movement
-        4.........Range 9-10: Visual attention extends beyond 20 feet & Demonstrates memory of visual events
-        """)
-        visualreflexes = ("""
-        ATYPICAL VISUAL REFLEXES
-        0......... Range 1-2:  No blink in response to touch and/or visual threat
-        1.........Range 3-4:  Blinks in response to touch but response may be latent
-        2.........Range 5-6:  Blink response to touch consistently present
-                                 Visual threat response intermittently present
-        3.........Range 7-8:  Visual threat response consistently present (both near 90% resolved)
-        4.........Range 9-10: Visual reflexes always present, resolved
-        """)
-        visualnovelty = ("""
-        DIFFICULTY WITH VISUAL NOVELTY
-        0.........Range 1-2:  Only favorite or known objects solicit visual attention
-        1.........Range 3-4:  May tolerate novel objects if the novel objects share characteristics of familiar objects
-        2.........Range 5-6:  Use of “known” objects to initiate looking sequence
-        3.........Range 7-8:  Selection of objects less restricted, requires 1-2 sessions of “warm up” time
-        4.........Range 9-10: Selection of objects not restricted
-        """)
-        visuallyguidedreach = ("""
-        ABSENCE OF VISUALLY GUIDED REACH
-        0.........Range 1-2:  Look & touch occur as separate functions
-                             Large &/or moving targets
-        1.........Range 3-4:  Look & touch on smaller objects that are familiar, lighted, or reflective
-                             Look and touch are still separate
-        2.........Range 5-6:  Visually guided reach with familiar objects or “favorite” color
-        3.........Range 7-8:  Look and touch occur in rapid sequence but not always together
-        4.........Range 9-10: Look and touch consistently
-        """)
         cvidomain = self.cviDomain1.GetString(self.cviDomain1.GetSelection())
         cvidomain = cvidomain.lower()
-        rubricdata = locals()[cvidomain]
+        rubricdata = globals()[cvidomain]
         wx.MessageBox(
                 rubricdata,
                 caption = "CVI RUBRICS"
@@ -10084,7 +9997,7 @@ class iepIntro(scrolled.ScrolledPanel):
         studentname = self.studentname1.GetString(self.studentname1.GetSelection())
         studentname = studentname.lower()
         lookupid = f"{studentname}iep"
-        iepdata = locals()[lookupid]
+        iepdata = globals()[lookupid]
         wx.MessageBox(
                 iepdata,
                 caption = f"IEP Summary for {studentname}"
