@@ -54,6 +54,7 @@ henrywoodhouseiep = """Student  	    XX  min / month
         ◦ Goal Objective 1
         ◦ Goal Objective 2    
         """
+s
 georgeknightleyiep = """Student  	    XX  min / month
     • Goal 1
         ◦ Goal Objective 1

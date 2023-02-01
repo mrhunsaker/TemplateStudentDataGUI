@@ -25,6 +25,7 @@ import traceback
 from csv import writer
 from pathlib import Path
 from sqlite3 import Error
+
 import numpy as np
 import pandas as pd
 import plotly.graph_objects as go
@@ -34,7 +35,6 @@ import wx.lib.scrolledpanel as scrolled
 from plotly.subplots import make_subplots
 
 from helpers import *
-
 
 date = datetime.datetime.now().strftime("%Y_%m_%d-%H%M%S_%p")
 
@@ -68,10 +68,10 @@ os.chdir(USER_DIR)
 
 for name in students:
     if not Path(USER_DIR).joinpath(
-            'StudentDatabase'
+            'TemplateStudentDatabase'
             ).exists():
         tmppath = Path(USER_DIR).joinpath(
-                'StudentDatabase'
+                'TemplateStudentDatabase'
                 )
         Path.mkdir(
                 tmppath,
@@ -79,11 +79,11 @@ for name in students:
                 exist_ok = True
                 )
     if not Path(USER_DIR).joinpath(
-            'StudentDatabase',
+            'TemplateStudentDatabase',
             'errorLogs'
             ).exists():
         tmppath = Path(USER_DIR).joinpath(
-                'StudentDatabase',
+                'TemplateStudentDatabase',
                 'errorLogs'
                 )
         Path.mkdir(
@@ -92,11 +92,11 @@ for name in students:
                 exist_ok = True
                 )
     if not Path(USER_DIR).joinpath(
-            'StudentDatabase',
+            'TemplateStudentDatabase',
             'StudentDataFiles'
             ).exists():
         tmppath = Path(USER_DIR).joinpath(
-                'StudentDatabase',
+                'TemplateStudentDatabase',
                 'StudentDataFiles'
                 )
         Path.mkdir(
@@ -105,12 +105,12 @@ for name in students:
                 exist_ok = True
                 )
     if not Path(USER_DIR).joinpath(
-            'StudentDatabase',
+            'TemplateStudentDatabase',
             'StudentDataFiles',
             name
             ).exists():
         tmppath = Path(USER_DIR).joinpath(
-                'StudentDatabase',
+                'TemplateStudentDatabase',
                 'StudentDataFiles',
                 name
                 )
@@ -120,13 +120,13 @@ for name in students:
                 exist_ok = True
                 )
     if not Path(USER_DIR).joinpath(
-            'StudentDatabase',
+            'TemplateStudentDatabase',
             'StudentDataFiles',
             name,
             'StudentDataSheets'
             ).exists():
         tmppath = Path(USER_DIR).joinpath(
-                'StudentDatabase',
+                'TemplateStudentDatabase',
                 'StudentDataFiles',
                 name,
                 'StudentDataSheets'
@@ -137,25 +137,25 @@ for name in students:
                 exist_ok = True
                 )
     if not Path(USER_DIR).joinpath(
-            'StudentDatabase',
+            'TemplateStudentDatabase',
             'StudentDataFiles',
             name,
             'StudentInstructionMaterials'
             ).exists():
         tmppath = Path(USER_DIR).joinpath(
-                'StudentDatabase',
+                'TemplateStudentDatabase',
                 'StudentDataFiles',
                 name,
                 'StudentInstructionMaterials'
                 )
         if not Path(USER_DIR).joinpath(
-                'StudentDatabase',
+                'TemplateStudentDatabase',
                 'StudentDataFiles',
                 name,
                 'StudentVisionAssessments'
                 ).exists():
             tmppath = Path(USER_DIR).joinpath(
-                    'StudentDatabase',
+                    'TemplateStudentDatabase',
                     'StudentDataFiles',
                     name,
                     'StudentVisionAssessments'
@@ -166,7 +166,7 @@ for name in students:
                 exist_ok = True
                 )
     if not Path(USER_DIR).joinpath(
-            'StudentDatabase',
+            'TemplateStudentDatabase',
             'StudentDataFiles',
             name,
             'omnibusDatabase.csv'
@@ -202,13 +202,13 @@ for name in students:
             writer_setup.writerow(list_names)
             f_object.close()
     if not Path(USER_DIR).joinpath(
-            'StudentDatabase',
+            'TemplateStudentDatabase',
             'StudentDataFiles',
             name,
             'BrailleSkillsProgression.csv'
             ).exists():
         tmppath = Path(USER_DIR).joinpath(
-                'StudentDatabase',
+                'TemplateStudentDatabase',
                 'StudentDataFiles',
                 name,
                 'BrailleSkillsProgression.csv'
@@ -290,39 +290,39 @@ for name in students:
             writer_setup.writerow(list_names)
             f_object.close()
     if not Path(USER_DIR).joinpath(
-            'StudentDatabase',
+            'TemplateStudentDatabase',
             'StudentDataFiles',
             name,
             'UEBLiterarySkillsProgression.html'
             ).exists():
         tmppath = Path(USER_DIR).joinpath(
-                'StudentDatabase',
+                'TemplateStudentDatabase',
                 'StudentDataFiles',
                 name,
                 'UEBLiterarySkillsProgression.html'
                 )
         Path.touch(tmppath)
     if not Path(USER_DIR).joinpath(
-            'StudentDatabase',
+            'TemplateStudentDatabase',
             'StudentDataFiles',
             name,
             'UEBTechnicalSkillsProgression.html'
             ).exists():
         tmppath = Path(USER_DIR).joinpath(
-                'StudentDatabase',
+                'TemplateStudentDatabase',
                 'StudentDataFiles',
                 name,
                 'UEBTechnicalSkillsProgression.html'
                 )
         Path.touch(tmppath)
     if not Path(USER_DIR).joinpath(
-            'StudentDatabase',
+            'TemplateStudentDatabase',
             'StudentDataFiles',
             name,
             'ScreenReaderSkillsProgression.csv'
             ).exists():
         tmppath = Path(USER_DIR).joinpath(
-                'StudentDatabase',
+                'TemplateStudentDatabase',
                 'StudentDataFiles',
                 name,
                 'ScreenReaderSkillsProgression.csv'
@@ -364,26 +364,26 @@ for name in students:
             writer_setup.writerow(list_names)
             f_object.close()
     if not Path(USER_DIR).joinpath(
-            'StudentDatabase',
+            'TemplateStudentDatabase',
             'StudentDataFiles',
             name,
             'ScreenReaderSkillsProgression.html'
             ).exists():
         tmppath = Path(USER_DIR).joinpath(
-                'StudentDatabase',
+                'TemplateStudentDatabase',
                 'StudentDataFiles',
                 name,
                 'ScreenReaderSkillsProgression.html'
                 )
         Path.touch(tmppath)
     if not Path(USER_DIR).joinpath(
-            'StudentDatabase',
+            'TemplateStudentDatabase',
             'StudentDataFiles',
             name,
             'AbacusSkillsProgression.csv'
             ).exists():
         tmppath = Path(USER_DIR).joinpath(
-                'StudentDatabase',
+                'TemplateStudentDatabase',
                 'StudentDataFiles',
                 name,
                 'AbacusSkillsProgression.csv'
@@ -421,26 +421,26 @@ for name in students:
             writer_setup.writerow(list_names)
             f_object.close()
     if not Path(USER_DIR).joinpath(
-            'StudentDatabase',
+            'TemplateStudentDatabase',
             'StudentDataFiles',
             name,
             'AbacusSkillsProgression.html'
             ).exists():
         tmppath = Path(USER_DIR).joinpath(
-                'StudentDatabase',
+                'TemplateStudentDatabase',
                 'StudentDataFiles',
                 name,
                 'AbacusSkillsProgression.html'
                 )
         Path.touch(tmppath)
     if not Path(USER_DIR).joinpath(
-            'StudentDatabase',
+            'TemplateStudentDatabase',
             'StudentDataFiles',
             name,
             'cviProgression.csv'
             ).exists():
         tmppath = Path(USER_DIR).joinpath(
-                'StudentDatabase',
+                'TemplateStudentDatabase',
                 'StudentDataFiles',
                 name,
                 'cviProgression.csv'
@@ -464,13 +464,13 @@ for name in students:
             writer_setup.writerow(list_names)
             f_object.close()
     if not Path(USER_DIR).joinpath(
-            'StudentDatabase',
+            'TemplateStudentDatabase',
             'StudentDataFiles',
             name,
             'cviProgression.html'
             ).exists():
         tmppath = Path(USER_DIR).joinpath(
-                'StudentDatabase',
+                'TemplateStudentDatabase',
                 'StudentDataFiles',
                 name,
                 'cviProgression.html'
@@ -481,7 +481,7 @@ for name in students:
             'datasheets'
             )
     destinationDir = Path(USER_DIR).joinpath(
-            'StudentDatabase',
+            'TemplateStudentDatabase',
             'StudentDataFiles',
             name,
             'StudentDataSheets'
@@ -494,7 +494,7 @@ for name in students:
             'instructionMaterials'
             )
     destinationDir = Path(USER_DIR).joinpath(
-            'StudentDatabase',
+            'TemplateStudentDatabase',
             'StudentDataFiles',
             name,
             'StudentInstructionMaterials'
@@ -507,7 +507,7 @@ for name in students:
             'visionAssessments'
             )
     destinationDir = Path(USER_DIR).joinpath(
-            'StudentDatabase',
+            'TemplateStudentDatabase',
             'StudentDataFiles',
             name,
             'StudentVisionAssessments'
@@ -796,7 +796,7 @@ def warningmessage(exception_type, exception_value, exception_traceback):
     message = "Please make sure all fields are selected / filled out properly\n\n"
     tb = traceback.format_exception(exception_type, exception_value, exception_traceback)
     logPath = Path(USER_DIR).joinpath(
-            'StudentDatabase',
+            'TemplateStudentDatabase',
             'errorLogs',
             f"logfile_{date}.log"
             )
@@ -1398,13 +1398,13 @@ class dataPanel(wx.Panel):
             if box.ShowModal() == wx.ID_OK:
                 self.studentdatabasename = box.GetValue()
                 if not Path(USER_DIR).joinpath(
-                        'StudentDatabase',
+                        'TemplateStudentDatabase',
                         'StudentDataFiles',
                         studentname,
                         self.studentdatabasename + '.txt'
                         ).exists():
                     tmppath = Path(USER_DIR).joinpath(
-                            'StudentDatabase',
+                            'TemplateStudentDatabase',
                             'StudentDataFiles',
                             studentname,
                             self.studentdatabasename + '.txt'
@@ -1462,7 +1462,7 @@ class dataPanel(wx.Panel):
                     self.filename.write(notes + ', ')
                     self.filename.close()
                     tmppath = Path(USER_DIR).joinpath(
-                            'StudentDatabase',
+                            'TemplateStudentDatabase',
                             'StudentDataFiles',
                             'Filenames.txt'
                             )
@@ -1471,7 +1471,7 @@ class dataPanel(wx.Panel):
                             'a'
                             )
                     tmppath = Path(USER_DIR).joinpath(
-                            'StudentDatabase',
+                            'TemplateStudentDatabase',
                             'StudentDataFiles',
                             studentname,
                             self.studentdatabasename + '.txt'
@@ -1500,7 +1500,7 @@ class dataPanel(wx.Panel):
                             ]
                     os.chdir(USER_DIR)
                     tmppath = Path(USER_DIR).joinpath(
-                            'StudentDatabase',
+                            'TemplateStudentDatabase',
                             'StudentDataFiles',
                             studentname,
                             'omnibusDatabase.csv'
@@ -2873,13 +2873,13 @@ class braillePanel(scrolled.ScrolledPanel):
         if box.ShowModal() == wx.ID_OK:
             self.studentdatabasename = box.GetValue()
             if not Path(USER_DIR).joinpath(
-                    'StudentDatabase',
+                    'TemplateStudentDatabase',
                     'StudentDataFiles',
                     studentname,
                     self.studentdatabasename + '.txt'
                     ).exists():
                 tmppath = Path(USER_DIR).joinpath(
-                        'StudentDatabase',
+                        'TemplateStudentDatabase',
                         'StudentDataFiles',
                         studentname,
                         self.studentdatabasename + '.txt'
@@ -3086,7 +3086,7 @@ class braillePanel(scrolled.ScrolledPanel):
                 self.filename.write(trial87 + ', ')
                 self.filename.close()
                 tmppath = Path(USER_DIR).joinpath(
-                        'StudentDatabase',
+                        'TemplateStudentDatabase',
                         'StudentDataFiles',
                         'Filenames.txt'
                         )
@@ -3095,7 +3095,7 @@ class braillePanel(scrolled.ScrolledPanel):
                         'a'
                         )
                 tmppath = Path(USER_DIR).joinpath(
-                        'StudentDatabase',
+                        'TemplateStudentDatabase',
                         'StudentDataFiles',
                         studentname,
                         self.studentdatabasename + '.txt'
@@ -3104,7 +3104,7 @@ class braillePanel(scrolled.ScrolledPanel):
                 self.filename.close()
                 os.chdir(USER_DIR)
                 tmppath = Path(USER_DIR).joinpath(
-                        'StudentDatabase',
+                        'TemplateStudentDatabase',
                         'StudentDataFiles',
                         studentname,
                         'BrailleSkillsProgression.csv'
@@ -3509,7 +3509,7 @@ class braillePanel(scrolled.ScrolledPanel):
         print(df)
 
         # tmppath = Path(USER_DIR).joinpath(
-        #        'StudentDatabase',
+        #        'TemplateStudentDatabase',
         #        'StudentDataFiles',
         #        studentname,
         #        'BrailleSkillsProgression.csv'
@@ -4799,7 +4799,7 @@ class braillePanel(scrolled.ScrolledPanel):
                 legend = dict(font = dict(size = 10))
                 )
         tmppath = Path(USER_DIR).joinpath(
-                'StudentDatabase',
+                'TemplateStudentDatabase',
                 'StudentDataFiles', studentname,
                 'UEBLiterarySkillsProgression.html'
                 )
@@ -5209,7 +5209,7 @@ class braillePanel(scrolled.ScrolledPanel):
                 legend = dict(font = dict(size = 10))
                 )
         tmppath = Path(USER_DIR).joinpath(
-                'StudentDatabase',
+                'TemplateStudentDatabase',
                 'StudentDataFiles', studentname,
                 'UEBTechnicalSkillsProgression.html'
                 )
@@ -5924,7 +5924,7 @@ class screenreaderPanel(scrolled.ScrolledPanel):
                 self.filename.write(trial47 + ', ')
                 self.filename.close()
                 tmppath = Path(USER_DIR).joinpath(
-                        'StudentDatabase',
+                        'TemplateStudentDatabase',
                         'StudentDataFiles',
                         'Filenames.txt'
                         )
@@ -5933,7 +5933,7 @@ class screenreaderPanel(scrolled.ScrolledPanel):
                         'a'
                         )
                 tmppath = Path(USER_DIR).joinpath(
-                        'StudentDatabase',
+                        'TemplateStudentDatabase',
                         'StudentDataFiles',
                         studentname,
                         self.studentdatabasename + '.txt'
@@ -5941,7 +5941,7 @@ class screenreaderPanel(scrolled.ScrolledPanel):
                 self.filename.write(f"'{tmppath}'" + '\n')
                 self.filename.close()
                 tmppath = Path(USER_DIR).joinpath(
-                        'StudentDatabase',
+                        'TemplateStudentDatabase',
                         'StudentDataFiles',
                         'Filenames.txt'
                         )
@@ -5950,7 +5950,7 @@ class screenreaderPanel(scrolled.ScrolledPanel):
                         'a'
                         )
                 tmppath = Path(USER_DIR).joinpath(
-                        'StudentDatabase',
+                        'TemplateStudentDatabase',
                         'StudentDataFiles',
                         studentname,
                         self.studentdatabasename + '.txt'
@@ -6208,7 +6208,7 @@ class screenreaderPanel(scrolled.ScrolledPanel):
         print(df)
 
         # tmppath = Path(USER_DIR).joinpath(
-        #        'StudentDatabase',
+        #        'TemplateStudentDatabase',
         #        'StudentDataFiles',
         #        studentname,
         #        'BrailleSkillsProgression.csv'
@@ -7515,13 +7515,13 @@ class abacusPanel(scrolled.ScrolledPanel):
         if box.ShowModal() == wx.ID_OK:
             self.studentdatabasename = box.GetValue()
             if not Path(USER_DIR).joinpath(
-                    'StudentDatabase',
+                    'TemplateStudentDatabase',
                     'StudentDataFiles',
                     studentname,
                     self.studentdatabasename + '.txt'
                     ).exists():
                 tmppath = Path(USER_DIR).joinpath(
-                        'StudentDatabase',
+                        'TemplateStudentDatabase',
                         'StudentDataFiles',
                         studentname,
                         self.studentdatabasename + '.txt'
@@ -7583,7 +7583,7 @@ class abacusPanel(scrolled.ScrolledPanel):
                 self.filename.write(trial82 + ', ')
                 self.filename.close()
                 tmppath = Path(USER_DIR).joinpath(
-                        'StudentDatabase',
+                        'TemplateStudentDatabase',
                         'StudentDataFiles',
                         'Filenames.txt'
                         )
@@ -7592,7 +7592,7 @@ class abacusPanel(scrolled.ScrolledPanel):
                         'a'
                         )
                 tmppath = Path(USER_DIR).joinpath(
-                        'StudentDatabase',
+                        'TemplateStudentDatabase',
                         'StudentDataFiles',
                         studentname,
                         self.studentdatabasename + '.txt'
@@ -7655,7 +7655,7 @@ class abacusPanel(scrolled.ScrolledPanel):
                         ]
                 os.chdir(USER_DIR)
                 tmppath = Path(USER_DIR).joinpath(
-                        'StudentDatabase',
+                        'TemplateStudentDatabase',
                         'StudentDataFiles',
                         studentname,
                         'AbacusSkillsProgression.csv'
@@ -7833,7 +7833,7 @@ class abacusPanel(scrolled.ScrolledPanel):
         print(df)
 
         # tmppath = Path(USER_DIR).joinpath(
-        #        'StudentDatabase',
+        #        'TemplateStudentDatabase',
         #        'StudentDataFiles',
         #        studentname,
         #        'BrailleSkillsProgression.csv'
@@ -8524,7 +8524,7 @@ class abacusPanel(scrolled.ScrolledPanel):
                 title_text = f"{studentname}: Abacus Skills Progression"
                 )
         tmppath = Path(USER_DIR).joinpath(
-                'StudentDatabase',
+                'TemplateStudentDatabase',
                 'StudentDataFiles', studentname,
                 'AbacusSkillsProgression.html'
                 )
@@ -8902,13 +8902,13 @@ class cviPanel(scrolled.ScrolledPanel):
         if box.ShowModal() == wx.ID_OK:
             self.studentdatabasename = box.GetValue()
             if not Path(USER_DIR).joinpath(
-                    'StudentDatabase',
+                    'TemplateStudentDatabase',
                     'StudentDataFiles',
                     studentname,
                     self.studentdatabasename + '.txt'
                     ).exists():
                 tmppath = Path(USER_DIR).joinpath(
-                        'StudentDatabase',
+                        'TemplateStudentDatabase',
                         'StudentDataFiles',
                         studentname,
                         self.studentdatabasename + '.txt'
@@ -8942,7 +8942,7 @@ class cviPanel(scrolled.ScrolledPanel):
                 self.filename.write(trial33 + ', ')
                 self.filename.close()
                 tmppath = Path(USER_DIR).joinpath(
-                        'StudentDatabase',
+                        'TemplateStudentDatabase',
                         'StudentDataFiles',
                         'Filenames.txt'
                         )
@@ -8951,7 +8951,7 @@ class cviPanel(scrolled.ScrolledPanel):
                         'a'
                         )
                 tmppath = Path(USER_DIR).joinpath(
-                        'StudentDatabase',
+                        'TemplateStudentDatabase',
                         'StudentDataFiles',
                         studentname,
                         self.studentdatabasename + '.txt'
@@ -8987,7 +8987,7 @@ class cviPanel(scrolled.ScrolledPanel):
 
                 os.chdir(USER_DIR)
                 tmppath = Path(USER_DIR).joinpath(
-                        'StudentDatabase',
+                        'TemplateStudentDatabase',
                         'StudentDataFiles',
                         studentname,
                         'cviProgression.csv'
@@ -9109,7 +9109,7 @@ class cviPanel(scrolled.ScrolledPanel):
         print(df)
 
         # tmppath = Path(USER_DIR).joinpath(
-        #        'StudentDatabase',
+        #        'TemplateStudentDatabase',
         #        'StudentDataFiles',
         #        studentname,
         #        'BrailleSkillsProgression.csv'
@@ -9737,7 +9737,7 @@ class cviPanel(scrolled.ScrolledPanel):
                 title_text = f"{studentname}: CVI Progression"
                 )
         tmppath = Path(USER_DIR).joinpath(
-                'StudentDatabase',
+                'TemplateStudentDatabase',
                 'StudentDataFiles', studentname,
                 'cviProgression.html'
                 )
@@ -9960,7 +9960,7 @@ class iepIntro(scrolled.ScrolledPanel):
                 self.studentname1.GetSelection()
                 )
         uploadlocation = Path(USER_DIR).joinpath(
-                'StudentDatabase',
+                'TemplateStudentDatabase',
                 'StudentDataFiles',
                 studentname
                 )
@@ -10016,7 +10016,7 @@ class iepIntro(scrolled.ScrolledPanel):
                 self.studentname1.GetSelection()
                 )
         uploadlocation = Path(USER_DIR).joinpath(
-                'StudentDatabase',
+                'TemplateStudentDatabase',
                 'StudentDataFiles',
                 studentname
                 )
@@ -10056,7 +10056,7 @@ class iepIntro(scrolled.ScrolledPanel):
                 self.studentname1.GetSelection()
                 )
         uploadlocation = Path(USER_DIR).joinpath(
-                'StudentDatabase',
+                'TemplateStudentDatabase',
                 'StudentDataFiles',
                 studentname
                 )
@@ -10096,7 +10096,7 @@ class iepIntro(scrolled.ScrolledPanel):
                 self.studentname1.GetSelection()
                 )
         uploadlocation = Path(USER_DIR).joinpath(
-                'StudentDatabase',
+                'TemplateStudentDatabase',
                 'StudentDataFiles',
                 studentname
                 )
@@ -10294,7 +10294,7 @@ class meetingsPanel(scrolled.ScrolledPanel):
                 self.studentname1.GetSelection()
                 )
         uploadlocation = Path(USER_DIR).joinpath(
-                'StudentDatabase',
+                'TemplateStudentDatabase',
                 'StudentDataFiles',
                 studentname
                 )
@@ -10346,13 +10346,13 @@ class meetingsPanel(scrolled.ScrolledPanel):
             if box.ShowModal() == wx.ID_OK:
                 self.studentdatabasename = box.GetValue()
                 if not Path(USER_DIR).joinpath(
-                        'StudentDatabase',
+                        'TemplateStudentDatabase',
                         'StudentDataFiles',
                         studentname,
                         self.studentdatabasename + '.txt'
                         ).exists():
                     tmppath = Path(USER_DIR).joinpath(
-                            'StudentDatabase',
+                            'TemplateStudentDatabase',
                             'StudentDataFiles',
                             studentname,
                             self.studentdatabasename + '.txt'
@@ -10369,7 +10369,7 @@ class meetingsPanel(scrolled.ScrolledPanel):
                     self.filename.write(notes + ', ')
                     self.filename.close()
                     tmppath = Path(USER_DIR).joinpath(
-                            'StudentDatabase',
+                            'TemplateStudentDatabase',
                             'StudentDataFiles',
                             'Filenames.txt'
                             )
@@ -10378,7 +10378,7 @@ class meetingsPanel(scrolled.ScrolledPanel):
                             'a'
                             )
                     tmppath = Path(USER_DIR).joinpath(
-                            'StudentDatabase',
+                            'TemplateStudentDatabase',
                             'StudentDataFiles',
                             studentname,
                             self.studentdatabasename + '.txt'
@@ -10587,7 +10587,7 @@ class observationsPanel(scrolled.ScrolledPanel):
                 self.studentname1.GetSelection()
                 )
         uploadlocation = Path(USER_DIR).joinpath(
-                'StudentDatabase',
+                'TemplateStudentDatabase',
                 'StudentDataFiles',
                 studentname
                 )
@@ -10639,13 +10639,13 @@ class observationsPanel(scrolled.ScrolledPanel):
             if box.ShowModal() == wx.ID_OK:
                 self.studentdatabasename = box.GetValue()
                 if not Path(USER_DIR).joinpath(
-                        'StudentDatabase',
+                        'TemplateStudentDatabase',
                         'StudentDataFiles',
                         studentname,
                         self.studentdatabasename + '.txt'
                         ).exists():
                     tmppath = Path(USER_DIR).joinpath(
-                            'StudentDatabase',
+                            'TemplateStudentDatabase',
                             'StudentDataFiles',
                             studentname,
                             self.studentdatabasename + '.txt'
@@ -10662,7 +10662,7 @@ class observationsPanel(scrolled.ScrolledPanel):
                     self.filename.write(notes + ', ')
                     self.filename.close()
                     tmppath = Path(USER_DIR).joinpath(
-                            'StudentDatabase',
+                            'TemplateStudentDatabase',
                             'StudentDataFiles',
                             'Filenames.txt'
                             )
@@ -10671,7 +10671,7 @@ class observationsPanel(scrolled.ScrolledPanel):
                             'a'
                             )
                     tmppath = Path(USER_DIR).joinpath(
-                            'StudentDatabase',
+                            'TemplateStudentDatabase',
                             'StudentDataFiles',
                             studentname,
                             self.studentdatabasename + '.txt'
