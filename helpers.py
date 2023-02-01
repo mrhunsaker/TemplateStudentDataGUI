@@ -38,130 +38,76 @@ students = [
         'JohnKnightley','
         'IsabellaKnightley'
         ]
-
-##############################################################################
-# All DSD Students
-##############################################################################
-students_all = [
-        'AddisonBooker',
-        'AlaijahValdez',
-        'AlessaPurcel',
-        'AlexRoylance',
-        'AmiRito',
-        'AmmonOlsen',
-        'AshlynnNelson',
-        'AustinDenney',
-        'AvaWilson',
-        'BaraahAlArbid',
-        'BelleOsborn',
-        'BrightonTingey',
-        'BryceClark',
-        'CallumDavis',
-        'CarstonTalbot',
-        'CarterCostello',
-        'CasonHemphill',
-        'CelestialNeilson',
-        'CharlieChristensen',
-        'ChaseCreer',
-        'ChristiGriffin',
-        'ColbieBlodgett',
-        'ColeCooper',
-        'ColeHalbasch',
-        'ConnorDenney',
-        'CristianPerez',
-        'CruAnderson',
-        'DaltonCarter',
-        'DylanPenalozaDiaz',
-        'EleanorParson',
-        'EllaLechtenberg',
-        'ElliotWhite',
-        'ElyseStephensen',
-        'EmmaThompson',
-        'EmmaTorres',
-        'EvieCompton',
-        'FrancisAnwar',
-        'FrancisLeyva',
-        'GenevieveBriceno',
-        'GraceDavis',
-        'GrantChristensen',
-        'HadleyKelleher',
-        'HalleGallacher',
-        'HannahHadean',
-        'HillaryWheeler',
-        'HunterHaskell',
-        'HunterTrevino',
-        'IsaacChiakis',
-        'JacksonJohnson',
-        'JacksonWhitear',
-        'JainaKarakusis',
-        'JakeHeairld',
-        'JayceAbles',
-        'JaydenSmith',
-        'JeffreyLeishman',
-        'JonathanChesnovar',
-        'JulieMartin',
-        'JustinBadham',
-        'KahvonFord',
-        'KaitlinStott',
-        'KatelynChamberlain',
-        'KayleeVimahi',
-        'KaysonWallwork',
-        'Kenzie Bybee',
-        'KenzieBybee',
-        'KinisouElimo',
-        'KiraAgamez',
-        'KiyrahMiller',
-        'LandonGraham',
-        'LandonUlrich',
-        'LanedanLee',
-        'LaurenArnesen',
-        'LillyVanwagoner',
-        'LincolnHoke',
-        'LucasKirby',
-        'LukeMontgomery',
-        'MackenzieMcclean',
-        'MadelineCostello',
-        'MagnusWilson',
-        'MallieMartin',
-        'MargaretWalker',
-        'MarilynParker',
-        'MaryJaneBlack',
-        'MayaHegoas',
-        'MeelaZendejas',
-        'MichelleCorrea',
-        'MilesWebster',
-        'MillieBeckstead',
-        'NadiaBurns',
-        'NoahPalmer',
-        'NoraBarton',
-        'OliverPage',
-        'OliviaEvershed',
-        'PaulaSackett',
-        'PrestonPage',
-        'RachelBallard',
-        'RachelScott',
-        'RyderReddig',
-        'RykerWeight',
-        'SamuelWilliams',
-        'SaraHill',
-        'SavannahWinegar',
-        'ShelbySteed',
-        'SpencerCostello',
-        'SuttonBuell',
-        'TalmageTingey',
-        'TarelLewis',
-        'TaylorTroxel',
-        'TheodoreLloyd',
-        'TjGutierrez',
-        'TyGoddard',
-        'TylerAshby',
-        'TysonGraham',
-        'WestonHemphill',
-        'WilliamHayes',
-        'WilliamJackson',
-        'WilliamMacKay',
-        'ZoeyFerguson'
-        ]
+donaldchamberlainiep = """Student  	    XX  min / month
+    • Goal 1
+        ◦ Goal Objective 1
+        ◦ Goal Objective 2    
+        """
+emmawoodhouseiep = """Student  	    XX  min / month
+    • Goal 1
+        ◦ Goal Objective 1
+        ◦ Goal Objective 2    
+        """
+henrywoodhouseiep = """Student  	    XX  min / month
+    • Goal 1
+        ◦ Goal Objective 1
+        ◦ Goal Objective 2    
+        """
+georgeknightleyiep = """Student  	    XX  min / month
+    • Goal 1
+        ◦ Goal Objective 1
+        ◦ Goal Objective 2    
+        """
+annetayloriep = """Student  	    XX  min / month
+    • Goal 1
+        ◦ Goal Objective 1
+        ◦ Goal Objective 2    
+        """
+philipeltoniep = """Student  	    XX  min / month
+    • Goal 1
+        ◦ Goal Objective 1
+        ◦ Goal Objective 2    
+        """
+frankchurchilliep = """Student  	    XX  min / month
+    • Goal 1
+        ◦ Goal Objective 1
+        ◦ Goal Objective 2    
+        """
+hettybatesiep = """Student  	    XX  min / month
+    • Goal 1
+        ◦ Goal Objective 1
+        ◦ Goal Objective 2    
+        """
+janefairfaxiep = """Student  	    XX  min / month
+    • Goal 1
+        ◦ Goal Objective 1
+        ◦ Goal Objective 2    
+        """
+harrietsmithiep = """Student  	    XX  min / month
+    • Goal 1
+        ◦ Goal Objective 1
+        ◦ Goal Objective 2    
+        """
+robertmartiniep = """Student  	    XX  min / month
+    • Goal 1
+        ◦ Goal Objective 1
+        ◦ Goal Objective 2    
+        """
+augustahawkinsiep = """Student  	    XX  min / month
+    • Goal 1
+        ◦ Goal Objective 1
+        ◦ Goal Objective 2    
+        """
+johnknightleyiep = """Student  	    XX  min / month
+    • Goal 1
+        ◦ Goal Objective 1
+        ◦ Goal Objective 2    
+        """
+isabellannightleyiep = """Student  	    XX  min / month
+    • Goal 1
+        ◦ Goal Objective 1
+        ◦ Goal Objective 2    
+        """
 ##############################################################################
 # Session and Task Definitions
 ##############################################################################
