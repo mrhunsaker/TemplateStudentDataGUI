@@ -21,10 +21,12 @@ import shutil
 import sqlite3
 import statistics
 import sys
+import time
 import traceback
 from csv import writer
 from pathlib import Path
 from sqlite3 import Error
+import logging
 
 import numpy as np
 import pandas as pd
@@ -172,10 +174,11 @@ for name in students:
             'omnibusDatabase.csv'
             ).exists():
         tmppath = Path(USER_DIR).joinpath(
-                'StudentDatabase/StudentDataFiles',
-                name,
-                'omnibusDatabase.csv'
-                )
+            'TemplateStudentDatabase',
+            'StudentDataFiles',
+            name,
+            'omnibusDatabase.csv'
+        )
         Path.touch(tmppath)
         list_names = [
                 'student',
@@ -808,7 +811,6 @@ def warningmessage(exception_type, exception_value, exception_traceback):
     messageDialog = wx.MessageDialog(None, message, str(exception_type), wx.OK | wx.ICON_ERROR)
     messageDialog.ShowModal()
     messageDialog.Destroy()
-
 
 sys.excepthook = warningmessage
 
@@ -5856,12 +5858,12 @@ class screenreaderPanel(scrolled.ScrolledPanel):
         if box.ShowModal() == wx.ID_OK:
             self.studentdatabasename = box.GetValue()
             if not os.path.exists(
-                    f"{USER_DIR}\\StudentDatabase\\StudentDataFiles\\{studentname}\\{self.studentdatabasename}.txt"
+                    f"{USER_DIR}\\TemplateStudentDatabase\\StudentDataFiles\\{studentname}\\{self.studentdatabasename}.txt"
                     ):
                 self.filename = open(
-                        f"{USER_DIR}\\StudentDatabase\\StudentDataFiles\\{studentname}\\{self.studentdatabasename}.txt",
-                        'w'
-                        )
+                    f"{USER_DIR}\\TemplateStudentDatabase\\StudentDataFiles\\{studentname}\\{self.studentdatabasename}.txt",
+                    'w'
+                )
                 self.filename.write('studentname' + ', ')
                 self.filename.write('simpledate' + ', ')
                 self.filename.write('trial11' + ', ')
@@ -6021,10 +6023,10 @@ class screenreaderPanel(scrolled.ScrolledPanel):
                         ]
                 os.chdir(USER_DIR)
                 with open(
-                        f"{USER_DIR}\\StudentDatabase\\StudentDataFiles\\{studentname}\\ScreenReaderSkillsProgression.csv",
+                        f"{USER_DIR}\\TemplateStudentDatabase\\StudentDataFiles\\{studentname}\\ScreenReaderSkillsProgression.csv",
                         'a',
-                        newline = ''
-                        ) as f_setup:
+                        newline=''
+                ) as f_setup:
                     writer_setup = writer(f_setup)
                     writer_setup.writerow(list_data)
                     f_setup.close()
@@ -6946,7 +6948,7 @@ class screenreaderPanel(scrolled.ScrolledPanel):
                 title_text = f"{studentname}: Screen Reader Skills Progression"
                 )
         fig.write_html(
-                f"{USER_DIR}\\StudentDatabase\\StudentDataFiles\\{studentname}\\ScreenReaderSkillsProgression.html"
+            f"{USER_DIR}\\TemplateStudentDatabase\\StudentDataFiles\\{studentname}\\ScreenReaderSkillsProgression.html"
                 )
         fig.show()
 
